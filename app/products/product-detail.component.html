@@ -1,5 +1,49 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
-        {{ pageTitle }}
+        {{ pageTitle }} {{ product.productName }}
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-sm-10 col-md-10 col-lg-10">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Name: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">{{ product.productName }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Code: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">{{ product.productCode }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Description: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">{{ product.description }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Availability: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">{{ product.releaseDate }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Price: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">{{ product.price }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4">Rating: </div>
+                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                <ai-star [rating]='product.starRating'></ai-star>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <img [src]='product.imageUrl' [title]="product.productName" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-default" (click)='onBack()'>
+            <i class="glyphicon glyphicon-chevron-left"></i> Back
+        </button>
     </div>
 </div>

@@ -19,7 +19,6 @@ export class Product implements IProduct {
         public description: string,
         public starRating: number,
         public imageUrl: string) {
-
     }
 
     calculateDiscount(percent: number): number {
